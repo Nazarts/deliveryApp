@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataClasses\DeliveryServiceDataClass;
-use app\Http\Requests\Delivery\CreateDeliveryRequest;
+use App\Http\Requests\Delivery\CreateDeliveryRequest;
 
 class DeliveryController extends Controller
 {
@@ -16,14 +16,6 @@ class DeliveryController extends Controller
                 'message' => 'Delivery service not found'
             ], 422);
         }
-        $result = (new $deliveryServiceClass)->createDelivery($deliveryDTO);
-        if (!$result) {
-            return response()->json([
-                'message' => 'Something went wrong, please try again or contact admins'
-            ], 500);
-        }
-        return response()->json([
-            'message' => 'Delivery created'
-        ], 200);
+        return (new $deliveryServiceClass)->createDelivery($deliveryDTO);
     }
 }

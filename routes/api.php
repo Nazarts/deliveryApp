@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\GetDeliveryServicesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
-Route::post('delivery', [\App\Http\Controllers\DeliveryController::class, 'store']);
+Route::get('delivery_services', GetDeliveryServicesController::class);
+Route::post('delivery', DeliveryController::class);

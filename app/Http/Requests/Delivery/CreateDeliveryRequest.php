@@ -3,7 +3,7 @@
 namespace app\Http\Requests\Delivery;
 
 use App\DataClasses\DeliveryServiceDataClass;
-use app\Http\Requests\Delivery\DTO\DeliveryDTO;
+use App\Http\Requests\Delivery\DTO\DeliveryDTO;
 use App\Http\Requests\Modelable;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
