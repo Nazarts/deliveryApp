@@ -2,13 +2,6 @@
 
 namespace App\DataClasses;
 
-use App\Services\DeliveryServices\AmazonDeliveryService;
-use App\Services\DeliveryServices\CdekDeliveryService;
-use App\Services\DeliveryServices\FedexDeliveryService;
-use App\Services\DeliveryServices\MeestDeliveryService;
-use App\Services\DeliveryServices\NovaPoshtaDeliveryService;
-use App\Services\DeliveryServices\ParcelHeroDeliveryService;
-use App\Services\DeliveryServices\UkrPoshtaDeliveryService;
 use Illuminate\Support\Collection;
 
 class DeliveryServiceDataClass implements BaseDataClass
@@ -27,31 +20,24 @@ class DeliveryServiceDataClass implements BaseDataClass
             [
                 self::NOVA_POSHTA => [
                     'name' => 'Нова Пошта',
-                    'handler' => NovaPoshtaDeliveryService::class
                 ],
                 self::CDEK => [
                     'name' => 'CDEK',
-                    'handler' => CdekDeliveryService::class
                 ],
                 self::UKR_POSHTA => [
                     'name' => 'УкрПошта',
-                    'handler' => UkrPoshtaDeliveryService::class
                 ],
                 self::MEEST => [
                     'name' => 'Meest',
-                    'handler' => MeestDeliveryService::class
                 ],
                 self::PARCEL_HERO => [
                     'name' => 'ParcelHero',
-                    'handler' => ParcelHeroDeliveryService::class
                 ],
                 self::AMAZON => [
                     'name' => 'Amazon',
-                    'handler' => AmazonDeliveryService::class
                 ],
                 self::FEDEX => [
                     'name' => 'Fedex',
-                    'handler' => FedexDeliveryService::class
                 ],
             ]
         );
